@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookmarkList should render 1`] = `
+<div>
+  <table
+    data-testid="bookmarkTable"
+    style="border: 1px solid black; border-collapse: collapse;"
+  />
+</div>
+`;

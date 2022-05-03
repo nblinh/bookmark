@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteButton should render 1`] = `
+<div>
+  <td
+    style="border: 1px solid black;"
+  >
+    <input
+      data-testid="deleteButton"
+      type="button"
+      value="Supprimer"
+    />
+  </td>
+</div>
+`;

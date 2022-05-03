@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookmarkPage should render 1`] = `
+<div>
+  <div>
+    <form
+      style="padding-bottom: 30px;"
+    >
+      <label>
+        Add URL:
+        <input
+          data-testid="urlText"
+          type="text"
+          value=""
+        />
+      </label>
+      <input
+        data-testid="submitBtn"
+        type="submit"
+        value="Submit"
+      />
+      <br />
+    </form>
+    <table
+      data-testid="bookmarkTable"
+      style="border: 1px solid black; border-collapse: collapse;"
+    />
+  </div>
+</div>
+`;
