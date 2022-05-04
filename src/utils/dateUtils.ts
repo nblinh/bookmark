@@ -2,7 +2,7 @@ export const getTimefromDate = (date: Date): string => {
     const now = new Date();
     const diff = now.getTime() - date.getTime();
 
-    return secondsToHmsFrench(diff);
+    return secondsToHmsFrench(diff / 1000);
 }
 
 function secondsToHmsFrench(d: number) {

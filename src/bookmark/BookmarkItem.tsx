@@ -21,7 +21,7 @@ const BookmarkItem: FC<BookmarkItemProps> = ({ bookmarks, setBookmarks, bookmark
                             <tr><td align='left'><li><b>Titre de la vidéo:</b></li></td><td align='left' style={{ paddingLeft: '20px' }}>{bookmark.title}</td></tr>
                             <tr><td align='left'><li><b>Auteur:</b></li></td><td align='left' style={{ paddingLeft: '20px' }}>{bookmark.author}</td></tr>
                             <tr><td align='left'><li><b>Date d'ajout dans l'application:</b></li></td><td align='left' style={{ paddingLeft: '20px' }}>
-                                il y a {getTimefromDate(bookmark.addDate)}</td></tr>
+                                {getTimefromDate(bookmark.addDate).trim() !== '' ? 'il y a' : 'à l\'instant'} {getTimefromDate(bookmark.addDate)}</td></tr>
                             <tr><td align='left'><li><b>Date de publication sur Vimeo:</b></li></td><td align='left' style={{ paddingLeft: '20px' }}>
                                 <span>le {new Intl.DateTimeFormat("fr-FR", { year: "numeric", month: "long", day: "2-digit" }).format(bookmark.publicDate)}</span></td>
                             </tr>
@@ -43,7 +43,7 @@ const BookmarkItem: FC<BookmarkItemProps> = ({ bookmarks, setBookmarks, bookmark
                             <tr><td align='left'><li><b>Titre de la photo:</b></li></td><td align='left' style={{ paddingLeft: '20px' }}>{bookmark.title}</td></tr>
                             <tr><td align='left'><li><b>Auteur:</b></li></td><td align='left' style={{ paddingLeft: '20px' }}>{bookmark.author}</td></tr>
                             <tr><td align='left'><li><b>Date d'ajout dans l'application:</b></li></td><td align='left' style={{ paddingLeft: '20px' }}>
-                                il y a {getTimefromDate(bookmark.addDate)}</td></tr>
+                                {getTimefromDate(bookmark.addDate).trim() !== '' ? 'il y a' : 'à l\'instant'} {getTimefromDate(bookmark.addDate)}</td></tr>
                             <tr><td align='left'><li><b>Date de publication sur Flickr:</b></li></td><td align='left' style={{ paddingLeft: '20px' }}>
                             </td>
                             </tr>

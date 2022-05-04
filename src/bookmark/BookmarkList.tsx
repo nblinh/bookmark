@@ -8,7 +8,7 @@ interface BookmarkListProps {
 }
 
 const BookmarkList: FC<BookmarkListProps> = ({ bookmarks, setBookmarks }) => {
-    const showBookmarks = bookmarks.map((bookmark: Bookmark) => <BookmarkItem bookmarks={bookmarks} setBookmarks={setBookmarks} bookmark={bookmark} />)
+    const showBookmarks = bookmarks.sort((a, b)=>(b.addDate.getTime()-a.addDate.getTime())).map((bookmark: Bookmark) => <BookmarkItem bookmarks={bookmarks} setBookmarks={setBookmarks} bookmark={bookmark} />)
     return (
         <table data-testid='bookmarkTable' style={{ border: '1px solid black', borderCollapse: 'collapse' }}>
             {showBookmarks}
