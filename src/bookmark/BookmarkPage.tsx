@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import BookmarkList from "./BookmarkList";
-import { Bookmark, getBookmarkInfo } from "./model";
+import { Bookmark } from "./bookmark.model";
+import { BookmarkService } from "./bookmark.service";
 
 interface BookmarkPageProps {
 
@@ -9,19 +10,19 @@ interface BookmarkPageProps {
 const BookmarkPage: FC<BookmarkPageProps> = () => {
     const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
     const [url, setUrl] = useState("");
-    const [error, setError] = useState(false);
+    const [error, setError] = useState("");
 
     const handleSubmit = (evt: any) => {
         evt.preventDefault();
 
-        getBookmarkInfo(url).then(bookmark => {
+        BookmarkService.getBookmarkInfo(url).then(bookmark => {
             bookmarks.push(bookmark);
             setBookmarks([...bookmarks]);
-            setError(false);
+            setError("");
         })
             .catch((error) => {
-                console.error('Error:', error);
-                setError(true);
+                console.log(error);
+                setError(error.message);
             });
     }
     return (
@@ -38,7 +39,7 @@ const BookmarkPage: FC<BookmarkPageProps> = () => {
                 </label>
                 <input type="submit" value="Submit" data-testid="submitBtn" />
                 <br />
-                {error && <span style={{ color: 'red' }}> Please enter a valid URL!This application support only two URL type: flickr.com and vimeo.com</span>}
+                <span style={{ color: 'red' }}> {error}</span>
             </form>
 
             <BookmarkList bookmarks={bookmarks} setBookmarks={setBookmarks} />

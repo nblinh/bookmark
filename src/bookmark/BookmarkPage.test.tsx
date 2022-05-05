@@ -1,10 +1,9 @@
-import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 import BookmarkPage from './BookmarkPage';
-import { getBookmarkInfo } from './model';
+import { BookmarkService } from './bookmark.service';
 
 
-jest.mock('./model', () => ({
+jest.mock('./bookmark.model', () => ({
     getBookmarkInfo: jest.fn().mockImplementation((url: string) => Promise.resolve({}))
 }));
 
@@ -23,7 +22,7 @@ describe('BookmarkPage', () => {
     test('should call noembed api when click submit button', () => {
         const { getByTestId } = render(<BookmarkPage />);
         expect(getByTestId('submitBtn')).toBeInTheDocument();
-        //fireEvent.click(getByTestId('submitBtn'));
-        //expect(getBookmarkInfo).toHaveBeenCalledTimes(1);
+        fireEvent.click(getByTestId('submitBtn'));
+        //expect(BookmarkService.getBookmarkInfo).toHaveBeenCalledTimes(1);
     });
 });

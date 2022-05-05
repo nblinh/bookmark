@@ -1,4 +1,4 @@
-import { Bookmark } from "../bookmark/model"
+import { Bookmark } from "../bookmark/bookmark.model"
 
 export const dataToBookmark = (data: any): Bookmark => {
     let bookmark: Bookmark

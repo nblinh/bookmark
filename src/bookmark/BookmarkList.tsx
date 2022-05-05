@@ -1,6 +1,6 @@
 import { FC } from "react";
 import BookmarkItem from "./BookmarkItem";
-import { Bookmark } from "./model";
+import { Bookmark } from "./bookmark.model";
 
 interface BookmarkListProps {
     bookmarks: Bookmark[];

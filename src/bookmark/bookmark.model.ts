@@ -1,5 +1,3 @@
-import { dataToBookmark } from "../utils/bookmarkUtils";
-
 export class Bookmark {
     view: string;
     url: string;
@@ -21,12 +19,3 @@ export class Bookmark {
     }
 }
 
-export const getBookmarkInfo = async (url: string): Promise<Bookmark> => {
-    if (!url.includes('vimeo.com') && !url.includes('flickr.com')) {
-        throw new Error();
-    }
-
-    return fetch('https://noembed.com/embed?url=' + url)
-        .then(response => response.json())
-        .then(data => dataToBookmark(data))
-}

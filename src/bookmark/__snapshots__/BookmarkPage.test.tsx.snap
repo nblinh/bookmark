@@ -20,6 +20,11 @@ exports[`BookmarkPage should render 1`] = `
         value="Submit"
       />
       <br />
+      <span
+        style="color: red;"
+      >
+         
+      </span>
     </form>
     <table
       data-testid="bookmarkTable"

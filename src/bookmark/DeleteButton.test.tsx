@@ -1,7 +1,6 @@
 
-import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
-import { Bookmark } from "./model";
+import { Bookmark } from "./bookmark.model";
 import BookmarkItem from "./BookmarkItem";
 import DeleteButton from "./DeleteButton";
 
@@ -26,16 +25,17 @@ const bookmarks: Bookmark[] = [
         "height": 683
     }
 ]
+const deleteBookmark = jest.fn();
 const setBookmarks = jest.fn();
 
 describe('DeleteButton', () => {
     test('should render', () => {
-        const { container } = render(<DeleteButton bookmarks={bookmarks} setBookmarks={setBookmarks} bookmark={bookmarks[0]} />);
+        const { container } = render(<DeleteButton deleteBookmark = {deleteBookmark} />);
         expect(container).toMatchSnapshot();
     });
 
     test('should have delete button', () => {
-        const { container } = render(<DeleteButton bookmarks={bookmarks} setBookmarks={setBookmarks} bookmark={bookmarks[0]} />);
+        const { container } = render(<DeleteButton deleteBookmark = {deleteBookmark} />);
         expect(container.getElementsByTagName('input').item(0)?.value).toEqual('Supprimer');
     });
 

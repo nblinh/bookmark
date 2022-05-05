@@ -1,0 +1,22 @@
+.Border {
+    border: '1px solid black';
+}
+
+.textLeft {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.paddingBottom20 {
+    padding-bottom: 20px;
+}
+  
+.Image{
+    width: 250px;
+    height: 150px;
+}
+
+.Video{
+    width: 250px;
+    height: 150px;
+}
